@@ -1,7 +1,7 @@
 import './Cell.css';
 import { CellProps } from '../../type';
 
-const Cell: React.FC<CellProps> = ({hasItem, clicked}) => {
+const Cell: React.FC<CellProps> = ({hasItem, clicked, onClickCell}) => {
     let cellClicked = ['cell'];
 
     if(clicked){
@@ -15,7 +15,7 @@ const Cell: React.FC<CellProps> = ({hasItem, clicked}) => {
     }
 
     return(
-        <div className={cellClicked.join(' ')}>
+        <div onClick={onClickCell} className={cellClicked.join(' ')}>
             {detected}
         </div>
     );
